@@ -348,6 +348,8 @@ class OSG_EXPORT Uniform : public UniformBase
         /** Get the type of glUniform as enum. */
         Type getType() const { return _type; }
 
+        // Below static definition of getNameID hides UniformBase::getNameID()
+        inline unsigned int getNameID() const { return UniformBase::getNameID(); }
 
         /** Set the length of a uniform, ensuring it is only set once (1==scalar)*/
         void setNumElements( unsigned int numElements );
